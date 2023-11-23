@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Customer</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Edit Customer</h1>
+    
+    <form th:action="@{'/customer/edit/' + ${customer.uuid}}" method="post">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" th:value="${customer.firstName}" required>
+        <br>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" th:value="${customer.lastName}" required>
+        <br>
+        <label for="street">Street:</label>
+        <input type="text" id="street" name="street" th:value="${customer.street}" required>
+        <br>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" th:value="${customer.address}" required>
+        <br>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" th:value="${customer.city}" required>
+        <br>
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" th:value="${customer.state}" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" th:value="${customer.email}" required>
+        <br>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" th:value="${customer.phone}" required>
+        <br>
+        <button type="submit">Save Changes</button>
+    </form>
+    
+    <br>
+    
+    <a th:href="@{/customer/list}">Back to Customer List</a>
+</body>
+</html>
